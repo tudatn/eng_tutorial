@@ -1,0 +1,18 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% @page_title = "User Menu" %>
+
+<div class="menu">
+  <h2>User Menu</h2>
+  <div class="identity">Logged in as:</div>
+  <ul>
+    <li><%= link_to("Manage Videos") %></li>
+    <li><%= link_to("Manage Account") %></li>
+    <li><%= link_to("logout", access_logout_path) %></li>
+  </ul>
+
+</div>

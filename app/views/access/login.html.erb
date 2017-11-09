@@ -1,0 +1,28 @@
+<% if !flash[:notice].blank? %>
+  <div class="notice">
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+
+<% @page_title = "User Login" %>
+
+<div class="login">
+  <%= form_tag(access_attempt_login_path, :method => :post) do %>
+  <table>
+    <tr>
+      <td><%= label_tag(:username) %></td>
+      <td><%= text_field_tag(:username, params[:username]) %></td>
+    </tr>
+    <tr>
+      <td><%= label_tag(:password) %></td>
+      <td><%= password_field_tag(:password) %></td>
+    </tr>
+    <tr>
+      <!-- <td>&nbsp;</td> -->
+      <td><%= submit_tag("Log in") %></td>
+      <td><%= link_to("Register", new_user_path) %></td>
+    </tr>
+  </table>
+  <% end %>
+
+</div>

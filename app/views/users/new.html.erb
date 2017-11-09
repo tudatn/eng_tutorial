@@ -1,0 +1,11 @@
+
+<div class="users new">
+  <h2>Login</h2>
+
+  <%= form_for(@user) do |f| %>
+    <%= render(:partial => 'form', :locals => {:f => f}) %>
+    <div class="form-buttons">
+      <%= f.submit("Register") %>
+    </div>
+  <% end %>
+</div>

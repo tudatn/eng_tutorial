@@ -1,9 +1,27 @@
 Rails.application.routes.draw do
+
+  resources :documents
+
+  root 'access#login'
+
+  resources :users do
+    member do
+      get :delete
+    end
+  end
+
+  # get 'user', :to => 'access/menu'
+  get 'access/menu'
+  get 'access/login'
+  post 'access/attempt_login'
+  get 'access/logout'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
